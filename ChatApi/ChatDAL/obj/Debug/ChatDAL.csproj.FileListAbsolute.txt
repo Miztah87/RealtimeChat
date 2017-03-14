@@ -1,0 +1,10 @@
+E:\Work\Chat App\ChatApi\ChatDAL\bin\Debug\ChatDAL.dll.config
+E:\Work\Chat App\ChatApi\ChatDAL\bin\Debug\ChatDAL.dll
+E:\Work\Chat App\ChatApi\ChatDAL\bin\Debug\ChatDAL.pdb
+E:\Work\Chat App\ChatApi\ChatDAL\bin\Debug\EntityFramework.dll
+E:\Work\Chat App\ChatApi\ChatDAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Work\Chat App\ChatApi\ChatDAL\bin\Debug\EntityFramework.xml
+E:\Work\Chat App\ChatApi\ChatDAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Work\Chat App\ChatApi\ChatDAL\obj\Debug\ChatDAL.csprojResolveAssemblyReference.cache
+E:\Work\Chat App\ChatApi\ChatDAL\obj\Debug\ChatDAL.dll
+E:\Work\Chat App\ChatApi\ChatDAL\obj\Debug\ChatDAL.pdb

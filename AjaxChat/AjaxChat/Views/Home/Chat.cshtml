@@ -1,0 +1,65 @@
+﻿@model AjaxChat.Models.Message
+@{
+    ViewBag.Title = "Chat";
+}
+
+<h2>Chat</h2>
+<table id="table" class="table table-striped">
+    <tbody ></tbody>
+</table>
+<div id="messages" class="col-md-12 well" style="max-height:300px; overflow-x:auto"></div>
+
+@using (Ajax.BeginForm("PostMessage", new AjaxOptions()
+{
+
+    HttpMethod = "POST",
+    Url = "http://localhost:65236/api/Msg/,",
+    InsertionMode = InsertionMode.InsertAfter,
+    OnComplete = "GetMessages"
+
+}))
+{
+    @Html.HiddenFor(x => x.Name, new { id = "Name" })
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-lg-3">
+            <div class="input-group">
+                @Html.TextBoxFor(x => x.MsgText, null, new { id = "txtMessage", @class = "form-control"  })
+                <span class="input-group-btn">
+                    <input id="btnSend" type="submit" class="btn btn-default" value="Send" />
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </div>
+}
+
+
+
+<script>
+    //gets messages and appends to target div
+    function GetMessages() {        
+        $.get("http://localhost:65236/api/Msg/GetMessages", function (data) {
+            
+            var msg = JSON.stringify(data);
+            //clears div before it populates with data
+            $('#messages').find('div').empty();
+            for (i = 0; i <= data.length; i++) {
+                for (n in data[i]) {
+                    $('#messages').append('<h4 style="">' + data[i][n] + '</h4>');
+                  
+                }
+                $('#messages').append('<hr/>');
+                //clears the textbox after submission
+                $('#txtMessage').val("");
+
+            }
+        });
+    }
+
+   //scrolls to bottom every 1sec
+    window.setInterval(function () {
+        var elem = document.getElementById('messages');
+        elem.scrollTop = elem.scrollHeight;
+    }, 1000);
+
+</script>
+
